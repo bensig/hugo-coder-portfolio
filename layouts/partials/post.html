@@ -34,6 +34,9 @@
   </article>
 
   <br/>
+  {{ if isset .Params "disclosure" }}
+    <p>Disclosure: Bear in mind that some of the links in this post are affiliate links and if you go through them to make a purchase I will earn a commission. Keep in mind that I link these companies and their products because of their quality and not because of the commission I receive from your purchases. The decision is yours, and whether or not you decide to buy something is completely up to you. </p>
+  {{ end }}
 
   {{ if and (not (eq .Site.DisqusShortname "" )) (eq (.Params.disable_comments | default false) false)}}
       {{ template "_internal/disqus.html" . }}
