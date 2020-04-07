@@ -2,7 +2,7 @@
 {{ if .IsNamedParams }}
   {{ $.Scratch.Add "image" ( .Get "image") }}
   {{ $.Scratch.Add "alt" ( .Get "alt") }}
-  {{ $.Scratch.Add "link" ( .Get "link") }}
+  {{ if isset .Params "link" }}{{ $.Scratch.Add "link" ( .Get "link") }}{{ end }}
 {{ else }}
   {{ $.Scratch.Add "image" "" }}
   {{ $.Scratch.Add "alt" "" }}
